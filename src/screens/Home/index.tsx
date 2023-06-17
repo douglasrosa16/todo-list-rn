@@ -12,13 +12,16 @@ export default function Home() {
 
       <View style={styles.listTask}>
         <TextInput style={styles.textCriadas}>
-          Criadas 
+          Criadas
         </TextInput>
         <TextInput style={styles.textConcluidas}>
           Concluídas
         </TextInput>
       </View>
-      
+      <TextInput style={styles.line}>
+        
+      </TextInput>
+
       <EmptyList />
     </View>
   );

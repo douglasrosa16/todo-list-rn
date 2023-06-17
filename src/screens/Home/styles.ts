@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		padding: 24,
-		marginTop: 25
+		marginTop: 25,		
 	},
 	textCriadas : {
 		color: theme.colors.brand.blue,
@@ -23,5 +23,11 @@ export const styles = StyleSheet.create({
 		color: theme.colors.brand.purple,
 		fontSize: theme.font_size.lg,
 		fontWeight: 'bold'
+	},
+	line : {		
+		marginLeft: 24,
+		marginRight: 24,
+		borderBottomWidth: 1,
+		borderBottomColor: theme.colors.base.gray300,
 	}
 });
