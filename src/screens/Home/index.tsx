@@ -11,15 +11,26 @@ export default function Home() {
       <Header />
 
       <View style={styles.listTask}>
-        <TextInput style={styles.textCriadas}>
-          Criadas
-        </TextInput>
-        <TextInput style={styles.textConcluidas}>
-          Concluídas
-        </TextInput>
+        <View style={styles.containerCriadas}>
+          <TextInput style={styles.textCriadas}>
+            Criadas
+          </TextInput>
+          <TextInput style={styles.textQntCriadas}>
+            20
+          </TextInput>
+
+        </View>
+        <View style={styles.containerConcluidas}>
+          <TextInput style={styles.textConcluidas}>
+            Concluídas
+          </TextInput>
+          <TextInput>
+            0
+          </TextInput>
+        </View>
       </View>
       <TextInput style={styles.line}>
-        
+
       </TextInput>
 
       <EmptyList />

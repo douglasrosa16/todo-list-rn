@@ -14,16 +14,32 @@ export const styles = StyleSheet.create({
 		padding: 24,
 		marginTop: 25,		
 	},
+	containerCriadas : {
+		flexDirection: 'row',		
+		alignContent: 'center'
+	},
 	textCriadas : {
 		color: theme.colors.brand.blue,
 		fontSize: theme.font_size.lg,
 		fontWeight: 'bold'
 	},
+	textQntCriadas : {
+		color: theme.colors.brand.blue,
+		fontSize: theme.font_size.lg,
+		fontWeight: 'bold',
+		backgroundColor: theme.colors.base.gray400,
+		borderRadius: 10,
+		width: 25,
+		height: 19,
+	},
+	containerConcluidas : {
+		flexDirection: 'row'
+	},
 	textConcluidas : {
 		color: theme.colors.brand.purple,
 		fontSize: theme.font_size.lg,
 		fontWeight: 'bold'
-	},
+	},	
 	line : {		
 		marginLeft: 24,
 		marginRight: 24,
