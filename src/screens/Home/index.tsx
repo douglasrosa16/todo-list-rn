@@ -1,6 +1,6 @@
-import { View, Image, TouchableOpacity, Text, TextInput } from 'react-native';
+import { View } from 'react-native';
 
-import Rocket from '../../images/rocket.png';
+import Header from '../../components/Header';
 
 import { styles } from "./styles";
 
@@ -8,16 +8,9 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+      <Header />
 
-      <View style={styles.form}>
-
-        <Image
-          style={styles.image}
-          source={Rocket}
-        />
-
-      </View>
-
+      
     </View>
   );
 }
