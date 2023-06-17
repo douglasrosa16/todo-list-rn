@@ -1,8 +1,8 @@
-import { View } from 'react-native';
+import { TextInput, View } from 'react-native';
+import { styles } from "./styles";
 
 import Header from '../../components/Header';
-
-import { styles } from "./styles";
+import EmptyList from '../../components/EmptyList';
 
 export default function Home() {
 
@@ -10,7 +10,16 @@ export default function Home() {
     <View style={styles.container}>
       <Header />
 
+      <View style={styles.listTask}>
+        <TextInput style={styles.textCriadas}>
+          Criadas 
+        </TextInput>
+        <TextInput style={styles.textConcluidas}>
+          Concluídas
+        </TextInput>
+      </View>
       
+      <EmptyList />
     </View>
   );
 }
