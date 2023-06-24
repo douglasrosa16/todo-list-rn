@@ -22,9 +22,9 @@ export default function Home() {
         </View>
         <View style={styles.containerConcluidas}>
           <TextInput style={styles.textConcluidas}>
-            Concluídas
+            Concluídas 
           </TextInput>
-          <TextInput>
+          <TextInput style={styles.textQntConcluidas}>
             0
           </TextInput>
         </View>

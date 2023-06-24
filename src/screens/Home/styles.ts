@@ -39,6 +39,15 @@ export const styles = StyleSheet.create({
 		color: theme.colors.brand.purple,
 		fontSize: theme.font_size.lg,
 		fontWeight: 'bold'
+	},
+	textQntConcluidas : {
+		color: theme.colors.brand.blue,
+		fontSize: theme.font_size.lg,
+		fontWeight: 'bold',
+		backgroundColor: theme.colors.base.gray400,
+		borderRadius: 10,
+		width: 25,
+		height: 19,
 	},	
 	line : {		
 		marginLeft: 24,
