@@ -18,8 +18,8 @@ export default function Home() {
           <TextInput style={styles.textQntCriadas}>
             20
           </TextInput>
-
         </View>
+
         <View style={styles.containerConcluidas}>
           <TextInput style={styles.textConcluidas}>
             Concluídas 

@@ -20,12 +20,12 @@ export const styles = StyleSheet.create({
 	},
 	textCriadas : {
 		color: theme.colors.brand.blue,
-		fontSize: theme.font_size.lg,
-		fontWeight: 'bold'
+		fontSize: theme.font_size.md,
+		fontFamily: theme.font_family.bold
 	},
 	textQntCriadas : {
 		color: theme.colors.brand.blue,
-		fontSize: theme.font_size.lg,
+		fontSize: theme.font_size.md,
 		fontWeight: 'bold',
 		backgroundColor: theme.colors.base.gray400,
 		borderRadius: 10,
@@ -37,8 +37,8 @@ export const styles = StyleSheet.create({
 	},
 	textConcluidas : {
 		color: theme.colors.brand.purple,
-		fontSize: theme.font_size.lg,
-		fontWeight: 'bold'
+		fontSize: theme.font_size.md,
+		fontFamily: theme.font_family.bold
 	},
 	textQntConcluidas : {
 		color: theme.colors.brand.blue,
