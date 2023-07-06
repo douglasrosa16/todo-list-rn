@@ -1,4 +1,4 @@
-import { TextInput, View, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 import { styles } from "./styles";
 
@@ -12,12 +12,12 @@ export default function Home() {
         source={Clipboard}
         style={styles.image}
       />      
-      <TextInput style={styles.textFirst}>
+      <Text style={styles.textFirst}>
         Você ainda não tem tarefas cadastradas
-      </TextInput>
-      <TextInput style={styles.textSecond}>
+      </Text>
+      <Text style={styles.textSecond}>
         Crie tarefas e organize seus itens a fazer
-      </TextInput>
+      </Text>
     </View>
   );
 }

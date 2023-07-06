@@ -1,4 +1,4 @@
-import { TextInput, View } from 'react-native';
+import { TextInput, View, Text } from 'react-native';
 import { styles } from "./styles";
 
 import Header from '../../components/Header';
@@ -12,26 +12,31 @@ export default function Home() {
 
       <View style={styles.listTask}>
         <View style={styles.containerCriadas}>
-          <TextInput style={styles.textCriadas}>
+          <Text style={styles.textCriadas}>
             Criadas
-          </TextInput>
-          <TextInput style={styles.textQntCriadas}>
-            20
-          </TextInput>
+          </Text>
+          <View style={styles.countainerCounter}>
+            <Text style={styles.counterText}>
+              20
+            </Text>
+          </View>
+
         </View>
 
         <View style={styles.containerConcluidas}>
-          <TextInput style={styles.textConcluidas}>
-            Concluídas 
-          </TextInput>
-          <TextInput style={styles.textQntConcluidas}>
-            0
-          </TextInput>
+          <Text style={styles.textConcluidas}>
+            Concluídas
+          </Text>
+          <View style={styles.countainerCounter}>
+            <Text style={styles.counterText}>
+              0
+            </Text>
+          </View>
         </View>
       </View>
-      <TextInput style={styles.line}>
+      <Text style={styles.line}>
 
-      </TextInput>
+      </Text>
 
       <EmptyList />
     </View>
