@@ -1,6 +1,7 @@
 import { TextInput, View, Text } from 'react-native';
 import { styles } from "./styles";
 
+import Task from '../../components/Task';
 import Header from '../../components/Header';
 import EmptyList from '../../components/EmptyList';
 
@@ -11,7 +12,7 @@ export default function Home() {
       <Header />
 
       <View style={styles.listTask}>
-        <View style={styles.containerCriadas}>
+        <View style={styles.containerInfo}>
           <Text style={styles.textCriadas}>
             Criadas
           </Text>
@@ -23,7 +24,7 @@ export default function Home() {
 
         </View>
 
-        <View style={styles.containerConcluidas}>
+        <View style={styles.containerInfo}>
           <Text style={styles.textConcluidas}>
             Concluídas
           </Text>
@@ -37,8 +38,8 @@ export default function Home() {
       <Text style={styles.line}>
 
       </Text>
-
-      <EmptyList />
+      <Task />
+      
     </View>
   );
 }

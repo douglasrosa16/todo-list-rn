@@ -14,37 +14,32 @@ export const styles = StyleSheet.create({
 		padding: 24,
 		marginTop: 25,		
 	},
-	containerCriadas : {
-		flexDirection: 'row',		
-		alignContent: 'center'
+	containerInfo : {
+		flexDirection: 'row',				
 	},
 	textCriadas : {
 		color: theme.colors.brand.blue,
 		fontSize: theme.font_size.md,
-		fontFamily: theme.font_family.bold
+		fontWeight: 'bold'
 	},
 	countainerCounter : {				
-		marginLeft: 5,			
-		backgroundColor: theme.colors.base.gray400,
+		marginLeft: 5,		
+		width: 25,	
 		height: 19,
+		backgroundColor: theme.colors.base.gray400,		
 		borderRadius: 999,		
-		alignItems: 'center'
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	counterText : {
-
-	},
-	textQntCriadas : {		
-		color: theme.colors.brand.blue,
-		fontSize: theme.font_size.md,
-		fontWeight: 'bold',		
-		width: 25,	
-	},
-	containerConcluidas : {
-		flexDirection: 'row'
+		color: theme.colors.base.gray200,
+		fontSize: theme.font_size.sm,
+		fontWeight: 'bold'
 	},
 	textConcluidas : {
 		color: theme.colors.brand.purple,
-		fontSize: theme.font_size.md		
+		fontSize: theme.font_size.md,
+		fontWeight: 'bold'
 	},
 	line : {		
 		marginLeft: 24,

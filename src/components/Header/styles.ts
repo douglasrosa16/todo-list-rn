@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
 		marginRight: 4,
 		fontSize: theme.font_size.md,
 		borderRadius: 5,
-		color: '#FFF'
+		color: theme.colors.base.gray100
 	},
 	button : {
 		width: 54,

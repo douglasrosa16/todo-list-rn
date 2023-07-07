@@ -18,10 +18,6 @@ export const theme = {
 			blue_dark: '#1E6F9F',
 		},
 	},
-	font_family: {
-		regular: 'Inter_400Regular',
-		bold: 'Inter_700Bold',
-	},
 	font_size: {
 		sm: 12,
 		md: 14,
