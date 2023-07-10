@@ -4,19 +4,22 @@ import { theme } from '../../theme';
 
 export const styles = StyleSheet.create({
   containerTask : {
+    width: '100%',
     height: 64,
-    paddingLeft: 12,
-    paddingTop: 12,
-    paddingBottom: 12,
-    paddingRight: 8,
-    backgroundColor: theme.colors.base.gray400,
-    margin: 10,
+    backgroundColor: theme.colors.base.gray500,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginVertical: 4,
+    paddingHorizontal: 12,
+    paddingVertical: 20,
     borderRadius: 8,
-    flexDirection: 'row'
+    borderWidth: 1,
+    borderColor: theme.colors.base.gray400
   },
   taskText : {
     color: theme.colors.base.gray100,
     fontSize: theme.font_size.md,
-    justifyContent: 'center'
+    
   }
 });

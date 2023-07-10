@@ -18,7 +18,7 @@ export default function Home() {
           </Text>
           <View style={styles.countainerCounter}>
             <Text style={styles.counterText}>
-              20
+              21
             </Text>
           </View>
 
