@@ -38,7 +38,9 @@ export default function Home() {
       <Text style={styles.line}>
 
       </Text>
-      <Task />
+      <Task title='Estudar React Native' isDone />
+      <Task title='Estudar Programação' isDone={false} />
+      <Task title='Estudar Deploy Expo' isDone />
       
     </View>
   );

@@ -2,20 +2,21 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 import { theme } from '../../theme';
+import { TaskDTO } from 'dtos/TaskDTO';
 
-export default function Task() {
+export default function Task({title, isDone} : TaskDTO) {
   return (
     <View style={styles.containerTask}>
       <TouchableOpacity>
         <MaterialCommunityIcons
-          name="checkbox-blank-circle-outline"
+          name={isDone ? "checkbox-marked-circle-outline" : "checkbox-blank-circle-outline"}
           size={22}
-          color={theme.colors.brand.purple}
+          color={isDone ? theme.colors.brand.purple : theme.colors.brand.blue}
         />
       </TouchableOpacity>
-      <View>
-        <Text style={styles.taskText}>
-          Integer urna interdum massa libero auctor neque turpis turpis semper.         
+      <View style={styles.textContainer}>
+        <Text style={isDone ? styles.textDone : styles.TextCreated}>
+          {title}
         </Text>
       </View>
       <TouchableOpacity>
