@@ -5,7 +5,7 @@ import { theme } from '../../theme';
 export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: theme.colors.base.gray600,			
+		backgroundColor: theme.colors.base.gray600,							
 	},
 	listTask : {
 		width: '100%',

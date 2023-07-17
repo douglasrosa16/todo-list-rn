@@ -1,11 +1,19 @@
-import { TextInput, View, Text } from 'react-native';
+import { useState } from 'react';
+import { TextInput, View, Text, FlatList } from 'react-native';
 import { styles } from "./styles";
 
 import Task from '../../components/Task';
 import Header from '../../components/Header';
 import EmptyList from '../../components/EmptyList';
+import { TaskDTO } from 'dtos/TaskDTO';
 
 export default function Home() {
+  const [tasks, setTasks] = useState<TaskDTO[]>([
+    // { id: '1', isDone: true, title: 'Estudar Javascript' },
+    // { id: '2', isDone: false, title: 'Estudar Delphi' },
+    // { id: '3', isDone: false, title: 'Estudar React' },
+    // { id: '4', isDone: true, title: 'Estudar Programação' },
+  ]);
 
   return (
     <View style={styles.container}>
@@ -35,13 +43,18 @@ export default function Home() {
           </View>
         </View>
       </View>
-      <Text style={styles.line}>
-
-      </Text>
-      <Task title='Estudar React Native' isDone />
-      <Task title='Estudar Programação' isDone={false} />
-      <Task title='Estudar Deploy Expo' isDone />
       
+      <FlatList
+        data={tasks}
+        keyExtractor={(tasks) => tasks.id!}
+        renderItem={({ item }) => (
+          <Task
+            key={item.id}
+            isDone={item.isDone}
+            title={item.title} />
+        )}
+        ListEmptyComponent={<EmptyList />}
+      />
     </View>
   );
 }
