@@ -4,10 +4,15 @@ import { styles } from './styles';
 import { theme } from '../../theme';
 import { TaskDTO } from 'dtos/TaskDTO';
 
-export default function Task({title, isDone} : TaskDTO) {
+type TasksProps = TaskDTO & {
+  onTaskDone: (id : string) => void
+  onTaskDeleted: (id: string) => void
+}
+
+export default function Task({id, title, isDone, onTaskDone, onTaskDeleted} : TasksProps) {
   return (
     <View style={styles.containerTask}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => onTaskDone(id)}>
         <MaterialCommunityIcons
           name={isDone ? "checkbox-marked-circle-outline" : "checkbox-blank-circle-outline"}
           size={22}
@@ -19,7 +24,7 @@ export default function Task({title, isDone} : TaskDTO) {
           {title}
         </Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => onTaskDeleted(id)}>
         <MaterialCommunityIcons
           name="trash-can-outline"
           size={20}
