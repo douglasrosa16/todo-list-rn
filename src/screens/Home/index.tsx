@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { TextInput, View, Text, FlatList } from 'react-native';
+import { useState, useRef } from 'react';
+import { TextInput, View, Text, FlatList, Alert } from 'react-native';
 import { styles } from "./styles";
 
 import Task from '../../components/Task';
@@ -11,6 +11,8 @@ import { uuid } from '../../utils/uuid';
 export default function Home() {
   const [tasks, setTasks] = useState<TaskDTO[]>([]);
   const [newTask, setNewTask] = useState('');
+  const newTaskInputRef = useRef<TextInput>(null);
+
 
   function handleAddTask() {
     if (newTask !== '' && newTask.length >= 5) {
@@ -19,20 +21,42 @@ export default function Home() {
         { id: uuid(), isDone: false, title: newTask.trim() }
       ]);
       setNewTask('');
-    }    
+
+      newTaskInputRef.current?.blur()
+    }
   }
 
-  function handleTaskDone(id: string){
-    console.log(`Tarefa ${id} marcada`)
+  function handleTaskDone(id: string) {
+    setTasks((task) =>
+      task.map((task) => {
+        task.id === id ? (task.isDone = !task.isDone) : null
+        return task
+      }),
+    )
   }
 
-  function handleTaskDelete(id : string){
-    console.log(`Tarefa ${id} excluída`)
+  function handleTaskDelete(id: string) {    
+    Alert.alert('Excluir tarefa', 'Deseja excluir essa tarefa?', [
+      {
+        text: 'Sim',
+        style: 'default',
+        onPress: () => 
+          setTasks((tasks) => tasks.filter((task) => task.id !== id)),
+      },
+      {
+        text: 'Não',
+        style: 'cancel'
+      }
+    ])
   }
+
+  const totalTasksCreated = tasks.length;
+  const totalTasksDone = tasks.filter(({isDone}) => isDone).length;
 
   return (
     <View style={styles.container}>
       <Header
+        inputRef={newTaskInputRef}
         task={newTask}
         onChangeText={setNewTask}
         onPress={handleAddTask}
@@ -45,7 +69,7 @@ export default function Home() {
           </Text>
           <View style={styles.countainerCounter}>
             <Text style={styles.counterText}>
-              0
+              {totalTasksCreated}
             </Text>
           </View>
 
@@ -57,7 +81,7 @@ export default function Home() {
           </Text>
           <View style={styles.countainerCounter}>
             <Text style={styles.counterText}>
-              0
+              {totalTasksDone}
             </Text>
           </View>
         </View>

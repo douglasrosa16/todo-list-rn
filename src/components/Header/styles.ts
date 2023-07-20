@@ -26,13 +26,17 @@ export const styles = StyleSheet.create({
 	},
 	input : {				
 		backgroundColor: theme.colors.base.gray500,
+		borderRadius: 5,
 		width: '75%',
 		height: 54,
 		padding: 16,
 		marginRight: 4,
-		fontSize: theme.font_size.md,
-		borderRadius: 5,
+		fontSize: theme.font_size.md,		
 		color: theme.colors.base.gray100
+	},
+	inputBorder: {
+		borderColor: theme.colors.brand.purple,
+		borderWidth: 1,
 	},
 	button : {
 		width: 54,
