@@ -35,12 +35,12 @@ export default function Home() {
     )
   }
 
-  function handleTaskDelete(id: string) {    
+  function handleTaskDelete(id: string) {
     Alert.alert('Excluir tarefa', 'Deseja excluir essa tarefa?', [
       {
         text: 'Sim',
         style: 'default',
-        onPress: () => 
+        onPress: () =>
           setTasks((tasks) => tasks.filter((task) => task.id !== id)),
       },
       {
@@ -51,7 +51,7 @@ export default function Home() {
   }
 
   const totalTasksCreated = tasks.length;
-  const totalTasksDone = tasks.filter(({isDone}) => isDone).length;
+  const totalTasksDone = tasks.filter(({ isDone }) => isDone).length;
 
   return (
     <View style={styles.container}>
@@ -61,44 +61,45 @@ export default function Home() {
         onChangeText={setNewTask}
         onPress={handleAddTask}
       />
-
-      <View style={styles.listTask}>
-        <View style={styles.containerInfo}>
-          <Text style={styles.textCriadas}>
-            Criadas
-          </Text>
-          <View style={styles.countainerCounter}>
-            <Text style={styles.counterText}>
-              {totalTasksCreated}
+      <View style={styles.tasksContainer}>
+        <View style={styles.listTask}>
+          <View style={styles.containerInfo}>
+            <Text style={styles.textCriadas}>
+              Criadas
             </Text>
+            <View style={styles.countainerCounter}>
+              <Text style={styles.counterText}>
+                {totalTasksCreated}
+              </Text>
+            </View>
+
           </View>
 
-        </View>
-
-        <View style={styles.containerInfo}>
-          <Text style={styles.textConcluidas}>
-            Concluídas
-          </Text>
-          <View style={styles.countainerCounter}>
-            <Text style={styles.counterText}>
-              {totalTasksDone}
+          <View style={styles.containerInfo}>
+            <Text style={styles.textConcluidas}>
+              Concluídas
             </Text>
+            <View style={styles.countainerCounter}>
+              <Text style={styles.counterText}>
+                {totalTasksDone}
+              </Text>
+            </View>
           </View>
         </View>
+
+        <FlatList
+          data={tasks}
+          keyExtractor={(tasks) => tasks.id}
+          renderItem={({ item }) => (
+            <Task
+              key={item.id}
+              onTaskDone={() => handleTaskDone(item.id)}
+              onTaskDeleted={() => handleTaskDelete(item.id)}
+              {...item} />
+          )}
+          ListEmptyComponent={<EmptyList />}
+        />
       </View>
-
-      <FlatList
-        data={tasks}
-        keyExtractor={(tasks) => tasks.id}
-        renderItem={({ item }) => (
-          <Task
-            key={item.id}
-            onTaskDone={() => handleTaskDone(item.id)}
-            onTaskDeleted={() => handleTaskDelete(item.id)}
-            {...item} />
-        )}
-        ListEmptyComponent={<EmptyList />}
-      />
     </View>
   );
 }
